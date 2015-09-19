@@ -13,11 +13,13 @@ makeCacheMatrix <- function(x = matrix()) {
      
      set <- function (y) {
           
+          # set x to y
           x <<- y
           
           #initialize nvrs
           nvrs <<- NULL
      }
+     
      #cache input matrix
      get <- function() x
      
@@ -48,7 +50,7 @@ cacheSolve <- function(x, ...) {
           message("getting cached data")
           return(nvrs)
      }
-     
+     #set data = x
      data <- x$get()
      
      nvrs <- solve(data, ...)
